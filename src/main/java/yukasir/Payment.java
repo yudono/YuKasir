@@ -231,6 +231,19 @@ public class Payment extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String invoice = "inv-"+generateRandomString();
+        TransactionController controller = new TransactionController();
+        transaction.forEach((id,trx)->{
+            try {
+                controller.create(invoice,trx.id, trx.quantity, total, hitung);
+            } catch (SQLException ex) {
+                Logger.getLogger(Payment.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });    
+        
+        QRIS qris = new QRIS();
+        qris.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
