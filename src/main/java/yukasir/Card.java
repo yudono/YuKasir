@@ -26,15 +26,17 @@ public class Card extends javax.swing.JPanel {
     }
     
     public void setProduct(Product product){
-        URL resource = getClass().getResource(product.path);
-        if (resource != null) {
-            ImageIcon img = new ImageIcon(resource);
-            ImageIcon preview = new ImageIcon(img.getImage().getScaledInstance(300,300, Image.SCALE_DEFAULT));
-            thumbnail.setIcon(preview);
-        }else{
-            ImageIcon img = new ImageIcon(product.path);
-            ImageIcon preview = new ImageIcon(img.getImage().getScaledInstance(300,300, Image.SCALE_DEFAULT));
-            thumbnail.setIcon(preview);
+        if(product.path != null){
+            URL resource = getClass().getResource(product.path);
+            if (resource != null) {
+                ImageIcon img = new ImageIcon(resource);
+                ImageIcon preview = new ImageIcon(img.getImage().getScaledInstance(300,300, Image.SCALE_DEFAULT));
+                thumbnail.setIcon(preview);
+            }else{
+                ImageIcon img = new ImageIcon(product.path);
+                ImageIcon preview = new ImageIcon(img.getImage().getScaledInstance(300,300, Image.SCALE_DEFAULT));
+                thumbnail.setIcon(preview);
+            }
         }
         productName.setText(product.name);
         NumberFormat numberFormat = NumberFormat.getInstance(Locale.GERMANY);
@@ -45,9 +47,9 @@ public class Card extends javax.swing.JPanel {
         thumbnail.setIcon(null);
         productName.setText("");
         hrg.setText("");
-        jPanel1.setBackground(new java.awt.Color(204, 225, 221));
-        jPanel2.setBackground(new java.awt.Color(204, 225, 221));
-        jPanel3.setBackground(new java.awt.Color(204, 225, 221));
+        jPanel1.setBackground(new java.awt.Color(235,235,235));
+        jPanel2.setBackground(new java.awt.Color(235,235,235));
+        jPanel3.setBackground(new java.awt.Color(235,235,235));
     }
 
     /**
@@ -66,7 +68,7 @@ public class Card extends javax.swing.JPanel {
         productName = new javax.swing.JLabel();
         hrg = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 225, 221));
+        setBackground(new java.awt.Color(235, 235, 235));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);

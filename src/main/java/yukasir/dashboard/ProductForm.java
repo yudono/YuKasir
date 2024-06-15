@@ -68,10 +68,21 @@ public class ProductForm extends Page {
                 name.setText(product.getName());
                 stock.setText(Integer.toString(product.getStock()));
                 price.setText(Integer.toString(product.getPrice()));
-                categorySelect.setSelectedItem(product.getCategory());
-                ImageIcon img = new ImageIcon(product.path);
-                ImageIcon preview = new ImageIcon(img.getImage().getScaledInstance(240,240, Image.SCALE_SMOOTH));
-                thumbnail.setIcon(preview);
+                if(product.getCategory() != null){
+                    categorySelect.setSelectedItem(product.getCategory());   
+                }
+                if(product.path != null){
+                    pathName = product.path;
+                    ImageIcon img;
+                    URL resource = getClass().getResource(product.path);
+                    if (resource != null) {
+                        img = new ImageIcon(resource);
+                    }else{
+                        img = new ImageIcon(product.path);
+                    }
+                    ImageIcon preview = new ImageIcon(img.getImage().getScaledInstance(240,240, Image.SCALE_SMOOTH));
+                    thumbnail.setIcon(preview);
+                }
             } catch (SQLException ex) {
                 Logger.getLogger(CategoryForm.class.getName()).log(Level.SEVERE, null, ex);
             }

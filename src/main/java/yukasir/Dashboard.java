@@ -60,19 +60,26 @@ public class Dashboard extends javax.swing.JFrame {
         
         setExtendedState(JFrame.MAXIMIZED_BOTH); 
         
-        ImageIcon img = new ImageIcon(getClass().getResource("/logo.png"));
-        ImageIcon preview = new ImageIcon(img.getImage().getScaledInstance(260,140, Image.SCALE_SMOOTH));
-        
-        logo.setIcon(preview);
-        
         var auth = LocalStorage.getData("auth");
         if(auth != null){
             User user = gson.fromJson(auth, User.class);
             userName.setText(user.getName());
+            userRole.setText(user.getRole());
+            if("admin".equals(user.getRole())){
+                productBtn.setVisible(true);
+                categoryBtn.setVisible(true);
+                usersBtn.setVisible(false);
+                reportBtn.setVisible(false);
+            } else if("manager".equals(user.getRole())){
+                productBtn.setVisible(false);
+                categoryBtn.setVisible(false);
+                usersBtn.setVisible(true);
+                reportBtn.setVisible(true);
+            }
         }
         
-        wrapper.getVerticalScrollBar().setUI(new CustomScrollBarUI(10));
-        wrapper.getHorizontalScrollBar().setUI(new CustomScrollBarUI(10));
+//        wrapper.getVerticalScrollBar().setUI(new CustomScrollBarUI(10));
+//        wrapper.getHorizontalScrollBar().setUI(new CustomScrollBarUI(10));
         
         addMouseListenerToButton(dashboardBtn,"/dashboard");
         addMouseListenerToButton(productBtn,"/product");
@@ -138,11 +145,11 @@ public class Dashboard extends javax.swing.JFrame {
     }
     
     private void mouseHoverSideMenu(MouseEvent evt){
-        evt.getComponent().setBackground(new java.awt.Color(34, 47, 68));
+        evt.getComponent().setBackground(new java.awt.Color(235,235,235));
     }
     
     private void mouseExitSideMenu(MouseEvent evt){
-        evt.getComponent().setBackground(new java.awt.Color(43,59,85));
+        evt.getComponent().setBackground(new java.awt.Color(255,255,255));
     }
 
     /**
@@ -158,6 +165,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         dashboardBtn = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         productBtn = new javax.swing.JPanel();
@@ -178,8 +186,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         userName = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        wrapper = new javax.swing.JScrollPane();
+        userRole = new javax.swing.JLabel();
         container = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -191,40 +198,56 @@ public class Dashboard extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.X_AXIS));
 
-        sidebar.setBackground(new java.awt.Color(43, 59, 85));
+        sidebar.setBackground(new java.awt.Color(255, 255, 255));
+        sidebar.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(242, 242, 242)));
+        sidebar.setForeground(new java.awt.Color(51, 51, 51));
         sidebar.setMaximumSize(new java.awt.Dimension(300, 32767));
         sidebar.setPreferredSize(new java.awt.Dimension(300, 525));
         sidebar.setLayout(new java.awt.CardLayout(24, 24));
 
-        jPanel4.setBackground(new java.awt.Color(43, 59, 85));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new javax.swing.BoxLayout(jPanel4, javax.swing.BoxLayout.Y_AXIS));
 
+        jPanel5.setMaximumSize(new java.awt.Dimension(32767, 56));
         jPanel5.setOpaque(false);
+        jPanel5.setPreferredSize(new java.awt.Dimension(252, 56));
 
         logo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo-75x.png"))); // NOI18N
         logo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         logo.setIconTextGap(0);
         logo.setMaximumSize(new java.awt.Dimension(300, 60));
         logo.setMinimumSize(new java.awt.Dimension(300, 60));
         logo.setPreferredSize(new java.awt.Dimension(300, 60));
 
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("Jualin POS");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 252, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addGap(0, 109, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.add(jPanel5);
 
-        dashboardBtn.setBackground(new java.awt.Color(43, 59, 85));
+        dashboardBtn.setBackground(new java.awt.Color(255, 255, 255));
         dashboardBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dashboardBtn.setMaximumSize(new java.awt.Dimension(300, 48));
         dashboardBtn.setMinimumSize(new java.awt.Dimension(300, 48));
@@ -233,13 +256,14 @@ public class Dashboard extends javax.swing.JFrame {
         dashboardBtn.setLayout(new java.awt.CardLayout(12, 12));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-24px/home-outline.png"))); // NOI18N
         jLabel11.setText("Dashboard");
         dashboardBtn.add(jLabel11, "card2");
 
         jPanel4.add(dashboardBtn);
 
-        productBtn.setBackground(new java.awt.Color(43, 59, 85));
+        productBtn.setBackground(new java.awt.Color(255, 255, 255));
         productBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         productBtn.setMaximumSize(new java.awt.Dimension(300, 48));
         productBtn.setMinimumSize(new java.awt.Dimension(300, 48));
@@ -248,13 +272,14 @@ public class Dashboard extends javax.swing.JFrame {
         productBtn.setLayout(new java.awt.CardLayout(12, 12));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-24px/folder.png"))); // NOI18N
         jLabel10.setText("Product");
         productBtn.add(jLabel10, "card2");
 
         jPanel4.add(productBtn);
 
-        categoryBtn.setBackground(new java.awt.Color(43, 59, 85));
+        categoryBtn.setBackground(new java.awt.Color(255, 255, 255));
         categoryBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         categoryBtn.setMaximumSize(new java.awt.Dimension(300, 48));
         categoryBtn.setMinimumSize(new java.awt.Dimension(300, 48));
@@ -263,13 +288,14 @@ public class Dashboard extends javax.swing.JFrame {
         categoryBtn.setLayout(new java.awt.CardLayout(12, 12));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-24px/tag.png"))); // NOI18N
         jLabel5.setText("Category");
         categoryBtn.add(jLabel5, "card2");
 
         jPanel4.add(categoryBtn);
 
-        transactionBtn.setBackground(new java.awt.Color(43, 59, 85));
+        transactionBtn.setBackground(new java.awt.Color(255, 255, 255));
         transactionBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         transactionBtn.setMaximumSize(new java.awt.Dimension(300, 48));
         transactionBtn.setMinimumSize(new java.awt.Dimension(300, 48));
@@ -278,13 +304,14 @@ public class Dashboard extends javax.swing.JFrame {
         transactionBtn.setLayout(new java.awt.CardLayout(12, 12));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-24px/shopping-cart.png"))); // NOI18N
         jLabel6.setText("Transaction");
         transactionBtn.add(jLabel6, "card2");
 
         jPanel4.add(transactionBtn);
 
-        usersBtn.setBackground(new java.awt.Color(43, 59, 85));
+        usersBtn.setBackground(new java.awt.Color(255, 255, 255));
         usersBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         usersBtn.setMaximumSize(new java.awt.Dimension(300, 48));
         usersBtn.setMinimumSize(new java.awt.Dimension(300, 48));
@@ -293,13 +320,14 @@ public class Dashboard extends javax.swing.JFrame {
         usersBtn.setLayout(new java.awt.CardLayout(12, 12));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-24px/user-outline.png"))); // NOI18N
         jLabel8.setText("Users");
         usersBtn.add(jLabel8, "card2");
 
         jPanel4.add(usersBtn);
 
-        reportBtn.setBackground(new java.awt.Color(43, 59, 85));
+        reportBtn.setBackground(new java.awt.Color(255, 255, 255));
         reportBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         reportBtn.setMaximumSize(new java.awt.Dimension(300, 48));
         reportBtn.setMinimumSize(new java.awt.Dimension(300, 48));
@@ -308,13 +336,14 @@ public class Dashboard extends javax.swing.JFrame {
         reportBtn.setLayout(new java.awt.CardLayout(12, 12));
 
         jLabel9.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-24px/chart-bar-outline.png"))); // NOI18N
         jLabel9.setText("Report");
         reportBtn.add(jLabel9, "card2");
 
         jPanel4.add(reportBtn);
 
-        logoutBtn.setBackground(new java.awt.Color(43, 59, 85));
+        logoutBtn.setBackground(new java.awt.Color(255, 255, 255));
         logoutBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         logoutBtn.setMaximumSize(new java.awt.Dimension(300, 48));
         logoutBtn.setMinimumSize(new java.awt.Dimension(300, 48));
@@ -323,7 +352,8 @@ public class Dashboard extends javax.swing.JFrame {
         logoutBtn.setLayout(new java.awt.CardLayout(12, 12));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-24px/eject.png"))); // NOI18N
         jLabel7.setText("Logout");
         logoutBtn.add(jLabel7, "card2");
 
@@ -336,6 +366,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.Y_AXIS));
 
         navbar.setBackground(new java.awt.Color(255, 255, 255));
+        navbar.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(242, 242, 242)));
         navbar.setMaximumSize(new java.awt.Dimension(32767, 60));
         navbar.setMinimumSize(new java.awt.Dimension(300, 0));
         navbar.setPreferredSize(new java.awt.Dimension(611, 60));
@@ -350,8 +381,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         userName.setText("Yudono");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel4.setText("Admin");
+        userRole.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        userRole.setText("Admin");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -363,7 +394,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(userName)
-                    .addComponent(jLabel4))
+                    .addComponent(userRole))
                 .addGap(0, 6, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -373,7 +404,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(userName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
+                .addComponent(userRole)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -403,14 +434,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel3.add(navbar);
 
-        wrapper.setBackground(new java.awt.Color(255, 255, 255));
-        wrapper.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-
         container.setBackground(new java.awt.Color(255, 255, 255));
-        container.setLayout(new javax.swing.BoxLayout(container, javax.swing.BoxLayout.Y_AXIS));
-        wrapper.setViewportView(container);
-
-        jPanel3.add(wrapper);
+        container.setLayout(new java.awt.CardLayout());
+        jPanel3.add(container);
 
         getContentPane().add(jPanel3);
 
@@ -464,7 +490,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -482,7 +508,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel sidebar;
     private javax.swing.JPanel transactionBtn;
     private javax.swing.JLabel userName;
+    private javax.swing.JLabel userRole;
     private javax.swing.JPanel usersBtn;
-    private javax.swing.JScrollPane wrapper;
     // End of variables declaration//GEN-END:variables
 }
