@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
+import static lib.PDFStrukGenerator.generateStrukPDF;
 import yukasir.controller.TransactionController;
 
 /**
@@ -259,6 +260,15 @@ public class Payment extends javax.swing.JFrame {
                 }
             });
             showMessageDialog(null,"Pembayaran berhasil","Success", INFORMATION_MESSAGE);
+            
+             String pdfPath = "struk.pdf";
+        String[][] items = {
+            {"Buku", "Rp 50.000"},
+            {"Pensil", "Rp 5.000"}
+        };
+        String total = "Rp 55.000";
+        generateStrukPDF(pdfPath, items, total);
+
             
             App app = new App();
             app.setVisible(true);

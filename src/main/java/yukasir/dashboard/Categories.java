@@ -163,8 +163,10 @@ public class Categories extends Page {
             }
         ));
         table.setEnabled(false);
+        table.setGridColor(new java.awt.Color(255, 255, 255));
         table.setRowHeight(40);
         table.setRowMargin(12);
+        table.getTableHeader().setResizingAllowed(false);
         jScrollPane1.setViewportView(table);
 
         jPanel1.add(jScrollPane1);

@@ -77,7 +77,7 @@
         <Container class="javax.swing.JPanel" name="jPanel3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ce" green="d1" red="b7" type="rgb"/>
+              <Color blue="ea" green="ea" red="ea" type="rgb"/>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[32767, 60]"/>
@@ -130,7 +130,7 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/logout.png"/>
+                  <Image iconType="3" name="/icon-pack/png-24px/eject.png"/>
                 </Property>
               </Properties>
               <Events>

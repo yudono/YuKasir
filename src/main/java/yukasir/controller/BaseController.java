@@ -52,7 +52,7 @@ public class BaseController {
                 "name TEXT NOT NULL," +
                 "email TEXT NOT NULL UNIQUE," +
                 "password TEXT NOT NULL," +
-                "role TEXT CHECK (role IN ('user', 'admin')) NOT NULL" +
+                "role TEXT CHECK (role IN ('user', 'admin','manager')) NOT NULL" +
                 ")";
             
             String sqlCategory = "CREATE TABLE IF NOT EXISTS category (" +
@@ -144,6 +144,14 @@ public class BaseController {
             pstmt.setString(3, "admin@gmail.com");
             pstmt.setString(4, BCrypt.hashpw("12345", BCrypt.gensalt())); // Hash the password
             pstmt.setString(5, "admin");
+            pstmt.executeUpdate();
+            
+             // Insert admin
+            pstmt.setInt(1, 3);
+            pstmt.setString(2, "manager");
+            pstmt.setString(3, "manager@gmail.com");
+            pstmt.setString(4, BCrypt.hashpw("12345", BCrypt.gensalt())); // Hash the password
+            pstmt.setString(5, "manager");
             pstmt.executeUpdate();
             
             // seeder category

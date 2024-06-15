@@ -177,7 +177,7 @@ public class App extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 541));
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.Y_AXIS));
 
-        jPanel3.setBackground(new java.awt.Color(183, 209, 206));
+        jPanel3.setBackground(new java.awt.Color(234, 234, 234));
         jPanel3.setMaximumSize(new java.awt.Dimension(32767, 60));
         jPanel3.setMinimumSize(new java.awt.Dimension(97, 60));
         jPanel3.setPreferredSize(new java.awt.Dimension(359, 60));
@@ -186,7 +186,7 @@ public class App extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Transaksi");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logout.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-24px/eject.png"))); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel2MousePressed(evt);

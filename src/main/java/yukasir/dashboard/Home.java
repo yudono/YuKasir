@@ -4,6 +4,9 @@
  */
 package yukasir.dashboard;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import lib.ImageScaler;
 import yukasir.Dashboard;
 
 /**
@@ -36,10 +39,6 @@ public class Home extends Page {
     private void initComponents() {
 
         jPanel14 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -51,7 +50,11 @@ public class Home extends Page {
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -59,63 +62,31 @@ public class Home extends Page {
         jPanel15 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(new java.awt.CardLayout(48, 48));
+        setLayout(null);
 
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel14.setLayout(new java.awt.GridLayout(2, 3, 32, 32));
+        jPanel14.setBorder(javax.swing.BorderFactory.createEmptyBorder(24, 24, 24, 56));
+        jPanel14.setMaximumSize(new java.awt.Dimension(32767, 300));
+        jPanel14.setPreferredSize(new java.awt.Dimension(1105, 300));
+        jPanel14.setLayout(new java.awt.GridLayout(2, 3, 24, 24));
 
-        jPanel3.setBackground(new java.awt.Color(169, 219, 251));
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setForeground(new java.awt.Color(11, 149, 238));
-        jLabel1.setText("Semua Transaksi");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(11, 149, 238));
-        jLabel2.setText("420");
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/7731130.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel13))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(9, 9, 9))
-        );
-
-        jPanel14.add(jPanel3);
-
-        jPanel1.setBackground(new java.awt.Color(138, 240, 195));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(241, 241, 241), 1, true));
+        jPanel1.setMaximumSize(new java.awt.Dimension(5000, 5000));
+        jPanel1.setPreferredSize(new java.awt.Dimension(126, 80));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(24, 194, 119));
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("50");
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setForeground(new java.awt.Color(24, 194, 119));
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Transaksi Berhasil");
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/7731130.png"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-48px/chart-area-outline.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -124,16 +95,16 @@ public class Home extends Page {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addContainerGap(40, Short.MAX_VALUE))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel14))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -143,17 +114,20 @@ public class Home extends Page {
 
         jPanel14.add(jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(249, 195, 250));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(241, 241, 241), 1, true));
+        jPanel2.setMaximumSize(new java.awt.Dimension(5000, 5000));
+        jPanel2.setPreferredSize(new java.awt.Dimension(126, 80));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(212, 18, 216));
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("370");
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setForeground(new java.awt.Color(212, 18, 216));
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Transaksi Gagal");
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/7731130.png"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-48px/chart-area-outline.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -165,14 +139,14 @@ public class Home extends Page {
                     .addComponent(jLabel15)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
@@ -181,17 +155,20 @@ public class Home extends Page {
 
         jPanel14.add(jPanel2);
 
-        jPanel4.setBackground(new java.awt.Color(251, 191, 193));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(241, 241, 241), 1, true));
+        jPanel4.setMaximumSize(new java.awt.Dimension(5000, 5000));
+        jPanel4.setPreferredSize(new java.awt.Dimension(126, 80));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(240, 14, 22));
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("1052");
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setForeground(new java.awt.Color(240, 14, 22));
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Semua Produk");
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/7731130.png"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-48px/chart-area-outline.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -200,16 +177,16 @@ public class Home extends Page {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16)
+                    .addComponent(jLabel18)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -219,17 +196,60 @@ public class Home extends Page {
 
         jPanel14.add(jPanel4);
 
-        jPanel5.setBackground(new java.awt.Color(195, 234, 152));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(241, 241, 241), 1, true));
+        jPanel3.setMaximumSize(new java.awt.Dimension(5000, 5000));
+        jPanel3.setPreferredSize(new java.awt.Dimension(114, 125));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setText("Semua Transaksi");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("420");
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-48px/chart-area-outline.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(9, 9, 9))
+        );
+
+        jPanel14.add(jPanel3);
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(241, 241, 241), 1, true));
+        jPanel5.setMaximumSize(new java.awt.Dimension(5000, 5000));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(128, 207, 42));
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("63");
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setForeground(new java.awt.Color(128, 207, 42));
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setText("Semua Kategori");
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/7731130.png"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-48px/chart-area-outline.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -241,13 +261,13 @@ public class Home extends Page {
                     .addComponent(jLabel17)
                     .addComponent(jLabel9)
                     .addComponent(jLabel10))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -257,17 +277,19 @@ public class Home extends Page {
 
         jPanel14.add(jPanel5);
 
-        jPanel15.setBackground(new java.awt.Color(247, 222, 159));
+        jPanel15.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel15.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(241, 241, 241), 1, true));
+        jPanel15.setMaximumSize(new java.awt.Dimension(5000, 5000));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(235, 174, 19));
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
         jLabel11.setText("14");
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setForeground(new java.awt.Color(235, 174, 19));
+        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
         jLabel12.setText("Semua User");
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/7731130.png"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-pack/png-48px/chart-area-outline.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -276,16 +298,16 @@ public class Home extends Page {
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18)
+                    .addComponent(jLabel16)
                     .addComponent(jLabel11)
                     .addComponent(jLabel12))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -295,7 +317,8 @@ public class Home extends Page {
 
         jPanel14.add(jPanel15);
 
-        add(jPanel14, "card2");
+        add(jPanel14);
+        jPanel14.setBounds(0, 0, 1105, 374);
     }// </editor-fold>//GEN-END:initComponents
 
 
