@@ -85,6 +85,7 @@ informasi login:
 
 #screenshot:
 
+![screenshot](screenshots/screenshot1.png)
 <img width="1710" alt="Screenshot 2025-06-12 at 22 32 32" src="https://github.com/user-attachments/assets/2420015b-d112-449b-8b38-50b735a8e47e" />
 <img width="1710" alt="Screenshot 2025-06-12 at 22 35 20" src="https://github.com/user-attachments/assets/bc37e8dc-27fb-4d22-b54e-17c0f223e831" />
 <img width="1710" alt="Screenshot 2025-06-12 at 22 35 50" src="https://github.com/user-attachments/assets/da21cdb0-bf9d-4361-8f90-5519fb8c26a8" />
