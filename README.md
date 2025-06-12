@@ -86,12 +86,11 @@ informasi login:
 #screenshot:
 
 ![screenshot](screenshots/screenshot1.png)
-<img width="1710" alt="Screenshot 2025-06-12 at 22 32 32" src="https://github.com/user-attachments/assets/2420015b-d112-449b-8b38-50b735a8e47e" />
-<img width="1710" alt="Screenshot 2025-06-12 at 22 35 20" src="https://github.com/user-attachments/assets/bc37e8dc-27fb-4d22-b54e-17c0f223e831" />
-<img width="1710" alt="Screenshot 2025-06-12 at 22 35 50" src="https://github.com/user-attachments/assets/da21cdb0-bf9d-4361-8f90-5519fb8c26a8" />
-<img width="1710" alt="Screenshot 2025-06-12 at 22 36 00" src="https://github.com/user-attachments/assets/e9022be9-aacb-470f-a21e-7bbacc167594" />
-<img width="1710" alt="Screenshot 2025-06-12 at 22 36 07" src="https://github.com/user-attachments/assets/41248b28-61a6-4b5c-9e24-09cc1f318c38" />
-<img width="1710" alt="Screenshot 2025-06-12 at 22 36 14" src="https://github.com/user-attachments/assets/61600083-2507-4023-8c3a-24e51fcbc8a0" />
-<img width="1710" alt="Screenshot 2025-06-12 at 22 37 32" src="https://github.com/user-attachments/assets/fcf838e6-b6ce-442f-8b19-4907ed352e1a" />
-<img width="1710" alt="Screenshot 2025-06-12 at 22 37 42" src="https://github.com/user-attachments/assets/644d956f-23a4-48cc-86f4-d6673ffca094" />
-<img width="1710" alt="Screenshot 2025-06-12 at 22 37 58" src="https://github.com/user-attachments/assets/14c7274e-70e8-4ec0-a6c5-d0a5fbdcd70b" />
+![screenshot](screenshots/screenshot2.png)
+![screenshot](screenshots/screenshot2.png)
+![screenshot](screenshots/screenshot3.png)
+![screenshot](screenshots/screenshot5.png)
+![screenshot](screenshots/screenshot6.png)
+![screenshot](screenshots/screenshot7.png)
+![screenshot](screenshots/screenshot8.png)
+![screenshot](screenshots/screenshot9.png)
